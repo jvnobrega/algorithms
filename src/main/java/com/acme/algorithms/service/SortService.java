@@ -21,7 +21,7 @@ public class SortService {
         return lowestPricePosition;
     }
 
-    public void swipe(final Car[] cars, int firstPosition, int secondPosition) {
+    public void swap(final Car[] cars, int firstPosition, int secondPosition) {
         Car firstCar = cars[firstPosition];
         Car secondCar = cars[secondPosition];
         cars[secondPosition] = firstCar;
