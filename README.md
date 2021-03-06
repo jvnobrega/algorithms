@@ -26,7 +26,7 @@ Selection sort     | O(n2)   |  O(n2)  |  O(n2)
 
 `--header 'Content-Type: application/json' 
 --data-raw '{
-"cars": [~~~~
+"cars": [
 {
 "name": "Audi RS Q3",
 "price": 89900.0
