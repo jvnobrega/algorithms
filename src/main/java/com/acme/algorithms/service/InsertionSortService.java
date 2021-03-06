@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SelectionSortService {
+public class InsertionSortService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SelectionSortService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(InsertionSortService.class);
 
     @Autowired
     private SortService sortService;
@@ -18,10 +18,14 @@ public class SelectionSortService {
     public CarSortResponse sort(CarSortRequest request) {
         LOGGER.info("m=sort request: {}", request);
         final var cars = request.getCars();
-        final var size = cars.length;
-        for (int current = 0; current < size - 1; current++) {
-            int lowestPricePosition = sortService.getLowestPricePosition(cars, current, size);
-            sortService.swap(cars, current, lowestPricePosition);
+        final var size = cars.length - 1;
+        for (int current = 1; current < size; current++) {
+            int check = current;
+            LOGGER.info("Analysing car[" + check + "]: " + cars[check]);
+            while (check > 0 && cars[check - 1].getPrice() > cars[check].getPrice()) {
+                sortService.swap(cars, check, check - 1);
+                check--;
+            }
         }
         final var response = new CarSortResponse().setCars(cars);
         LOGGER.info("m=sort response: {}", response);
