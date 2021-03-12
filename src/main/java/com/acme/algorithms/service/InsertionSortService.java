@@ -2,6 +2,7 @@ package com.acme.algorithms.service;
 
 import com.acme.algorithms.resource.request.CarSortRequest;
 import com.acme.algorithms.resource.response.CarSortResponse;
+import com.acme.algorithms.service.core.SortService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class InsertionSortService {
     public CarSortResponse sort(CarSortRequest request) {
         LOGGER.info("m=sort request: {}", request);
         final var cars = request.getCars();
-        final var size = cars.length - 1;
+        final var size = cars.length;
         for (int current = 1; current < size; current++) {
             int check = current;
             LOGGER.info("Analysing car[" + check + "]: " + cars[check]);

@@ -1,4 +1,4 @@
-package com.acme.algorithms.service;
+package com.acme.algorithms.service.core;
 
 import com.acme.algorithms.model.Car;
 import org.slf4j.Logger;

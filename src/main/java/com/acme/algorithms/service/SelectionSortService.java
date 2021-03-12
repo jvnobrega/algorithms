@@ -2,6 +2,7 @@ package com.acme.algorithms.service;
 
 import com.acme.algorithms.resource.request.CarSortRequest;
 import com.acme.algorithms.resource.response.CarSortResponse;
+import com.acme.algorithms.service.core.SortService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
